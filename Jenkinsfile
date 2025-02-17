@@ -1,26 +1,24 @@
 pipeline {
     agent any
-    tools{
+    tools {
         jdk 'java-11'
         maven 'maven'
     }
-    stages{
-        stage('git checkout'){
-            steps{
+    stages {
+        stage('Git Checkout') {
+            steps {
                 git branch: 'main', url: 'https://github.com/meghanas086/test-1.git'
             }
-    
-        stage('compile'){
-            steps{
+        }
+        stage('Compile') {
+            steps {
                 sh "mvn -X compile"
             }
         }
-        stage('Build'){
-            steps{
-                sh "mvn clean install " 
+        stage('Build') {
+            steps {
+                sh "mvn clean install"
             }
         }
-
     }
-}
 }
