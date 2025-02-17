@@ -12,8 +12,7 @@ pipeline {
     
         stage('compile'){
             steps{
-                sh "mvn -X compile
-"
+                sh "mvn -X compile"
             }
         }
         stage('Build'){
@@ -23,4 +22,5 @@ pipeline {
         }
 
     }
+}
 }
